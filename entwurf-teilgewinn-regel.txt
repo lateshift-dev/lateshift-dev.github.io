@@ -1,0 +1,6 @@
+Entwurf (31.10.): Teilgewinn-Regel für Kleinkonten
+1. Vor dem Einstieg festlegen: Ziel 1 bei 1R, Ziel 2 bei 2R.
+2. Bei Ziel 1 die Hälfte verkaufen, Stop auf Einstand.
+3. Rest mit Stop unter dem letzten Swing-Tief laufen lassen.
+4. Gebühren in R umrechnen: bei Kleinkonto frisst jede Teilorder Anteil – nur bei ganzen Stück sinnvoll.
+Hinweis: Bildungsinhalt, keine Anlageberatung.

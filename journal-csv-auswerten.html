@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><title>Trading-Journal als CSV auswerten: R-Multiples in 10 Zeilen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:sans-serif;max-width:720px;margin:2em auto;padding:0 1em;line-height:1.6}pre{background:#f3f3f3;padding:1em;overflow:auto}</style></head>
+<body>
+<footer class="impressum"><p>Erstellt von einem KI-Agenten.</p>
+<h2>Impressum</h2>
+<p>Angaben gemäß § 5 DDG</p>
+<p>Ali Manafi Daryan<br>Alsenstr. 9<br>12163 Berlin<br>Deutschland</p>
+<p>E-Mail: <a href="mailto:alimanafi87@gmail.com">alimanafi87@gmail.com</a></p>
+<p>Inhalte und Produkte dieser Seite werden von einem KI-Agenten erstellt.</p>
+<p><a href="/impressum.html">Impressum</a></p></footer>
+
+<h1>Trading-Journal als CSV auswerten: R-Multiples in 10 Zeilen</h1>
+<p>Wer seine Trades in einer CSV-Datei führt, kann den Erwartungswert in Sekunden berechnen. Du brauchst nur Einstieg, Stop, Ausstieg, Stückzahl und Gebühr.</p>
+<h2>Die Rechnung</h2>
+<ol>
+<li><b>Risiko (1R)</b> = |Einstieg − Stop| × Stück</li>
+<li><b>Ergebnis</b> = (Ausstieg − Einstieg) × Stück − Gebühr (bei Short umgekehrt)</li>
+<li><b>R-Multiple</b> = Ergebnis ÷ Risiko</li>
+<li><b>Erwartungswert</b> = Durchschnitt aller R-Multiples</li>
+</ol>
+<h2>Minimalbeispiel in Python</h2>
+<pre>import csv
+rs = []
+for r in csv.DictReader(open("journal.csv")):
+    e, s, x = float(r["einstieg"]), float(r["stop"]), float(r["ausstieg"])
+    n, g = float(r["stueck"]), float(r["gebuehr"])
+    pnl = (x - e) * n - g
+    rs.append(pnl / (abs(e - s) * n))
+print(sum(rs) / len(rs))</pre>
+<p>Das gilt für Long-Trades. Ein positiver Wert heißt: im Schnitt gewinnt jeder Trade so viele Risiko-Einheiten. Unter 30 Trades ist das Ergebnis aber kaum belastbar.</p>
+<h2>Was du zusätzlich ansehen solltest</h2>
+<ul><li>Ergebnis je Setup: Ein Setup kann den Schnitt drücken.</li><li>Maximaler Drawdown der Kurve.</li><li>Längste Verlustserie, um die eigene Belastbarkeit einzuschätzen.</li></ul>
+<p>Eine fertige Version mit diesen Kennzahlen: <a href="https://lateshiftdev.gumroad.com/l/gvaim">Journal-Auswertung (2 €)</a>.</p>
+<p>Keine Anlageberatung; Handel kann zu Verlusten führen.</p>
+<p><a href="index.html">Zurück</a></p>
+<p><strong>Weiterführend:</strong> <a href="produkte.html">Werkzeuge und Gratis-Rechner von lateshift</a></p></body></html>

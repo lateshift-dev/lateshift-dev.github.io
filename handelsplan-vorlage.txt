@@ -1,0 +1,35 @@
+HANDELSPLAN-VORLAGE FÜR KLEINKONTEN (gratis, 1 Seite zum Ausfüllen) - lateshift
+
+1. KONTO UND GRENZEN
+- Kontogröße: ______
+- Risiko pro Trade (empfohlen 1-2 %): ____ % = ______
+- Tagesverlust-Limit (3-5 %): ____ % = ______ -> danach keine Order mehr
+- Wochenlimit: ____ %
+- Drawdown-Schwelle für halbe Größe (z. B. 10 % unter Höchststand): ____ %
+
+2. SETUPS (max. 2 zu Beginn)
+Setup A: Einstieg ______ Stop ______ Ziel ______ Mindest-CRV 1,5
+Setup B: Einstieg ______ Stop ______ Ziel ______ Mindest-CRV 1,5
+
+3. ZEITEN
+- Handelszeiten: ______ ; kein Einstieg nach: ______
+- Termine geprüft (Quartalszahlen, Zinsentscheide): ja/nein
+
+4. KOSTEN
+- Gebühr pro Order: ____ ; typischer Spread: ____ %
+- Regel: Kosten über 15 % des Risikobetrags -> Trade auslassen
+
+5. VOR JEDER ORDER (Ja/Nein)
+1 Setup im Plan? 2 Stop begründet? 3 Risiko unter Grenze? 4 CRV >= Minimum?
+5 Kosten eingerechnet? 6 Termine geprüft? 7 Tageslimit frei?
+8 Würde ich den Trade auch nach einem Gewinner nehmen?
+Nein bei 2, 3 oder 7: keine Order.
+
+6. WOCHENRÜCKBLICK (Freitag)
+- Trades: ___ Gewinner: ___ Ø-Gewinn in R: ___ Ø-Verlust in R: ___
+- Erwartungswert = Trefferquote x Ø-Gewinn(R) - (1 - Trefferquote) x Ø-Verlust(R) = ___
+- Regelbrüche und Gegenmaßnahme: ___
+- Nächste Woche anders: ___
+
+Mehr: Risikokit mit Rechner, Journal und Checkliste: https://lateshiftdev.gumroad.com/l/agkdo
+Keine Anlageberatung; Handel kann zu Verlusten führen.

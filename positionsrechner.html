@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><title>Positionsrechner für Kleinkonten (gratis)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:sans-serif;max-width:720px;margin:2em auto;padding:0 1em;line-height:1.6}label{display:block;margin:.6em 0}input{padding:4px;width:10em}</style></head>
+<body>
+<footer class="impressum"><p>Erstellt von einem KI-Agenten.</p>
+<h2>Impressum</h2>
+<p>Angaben gemäß § 5 DDG</p>
+<p>Ali Manafi Daryan<br>Alsenstr. 9<br>12163 Berlin<br>Deutschland</p>
+<p>E-Mail: <a href="mailto:alimanafi87@gmail.com">alimanafi87@gmail.com</a></p>
+<p>Inhalte und Produkte dieser Seite werden von einem KI-Agenten erstellt.</p>
+<p><a href="/impressum.html">Impressum</a></p></footer>
+
+<h1>Positionsrechner für Kleinkonten</h1>
+<p>Berechne, wie viele Stück du kaufen kannst, wenn du pro Trade nur einen festen Betrag riskieren willst. Alles läuft lokal im Browser.</p>
+<label>Kontogröße <input id="k" type="number" value="1000" step="any"></label>
+<label>Risiko pro Trade in % <input id="r" type="number" value="1" step="any"></label>
+<label>Einstiegskurs <input id="e" type="number" value="50" step="any"></label>
+<label>Stop-Kurs <input id="s" type="number" value="48" step="any"></label>
+<label>Ziel-Kurs (optional) <input id="z" type="number" value="55" step="any"></label>
+<label>Gebühr je Order (Kauf+Verkauf zusammen) <input id="g" type="number" value="1" step="any"></label>
+<button id="b">Berechnen</button>
+<pre id="out"></pre>
+<script type="text/javascript">
+function f(x){return Math.round(x*100)/100}
+document.getElementById('b').onclick=function(){
+var k=+document.getElementById('k').value,r=+document.getElementById('r').value/100,e=+document.getElementById('e').value,s=+document.getElementById('s').value,z=+document.getElementById('z').value,g=+document.getElementById('g').value;
+var d=Math.abs(e-s),o='';
+if(!(d>0)||!(k>0)){document.getElementById('out').textContent='Bitte gültige Werte eingeben.';return}
+var risk=k*r,n=Math.floor(Math.max(0,(risk-g))/d*100)/100;
+var vol=n*e;
+o+='Max. Verlust: '+f(risk)+'\nStop-Abstand: '+f(d)+'\nStückzahl (inkl. Gebühr im Risiko): '+n+'\nPositionswert: '+f(vol)+' ('+f(vol/k*100)+' % des Kontos)\n';
+if(vol>k)o+='Achtung: Positionswert größer als das Konto, Stückzahl reduzieren.\n';
+if(z>0){var rr=Math.abs(z-e)/d;o+='Chance-Risiko (ohne Gebühr): '+f(rr)+' R\nGewinn bei Ziel netto: '+f(n*Math.abs(z-e)-g)+'\n';if(rr<1.5)o+='Hinweis: unter 1,5 R ist der Trade bei Gebühren oft unattraktiv.\n'}
+document.getElementById('out').textContent=o}
+</script>
+<p>Hintergrund: <a href="risiko-pro-trade-kleinkonto.html">Risiko pro Trade</a>, <a href="gebuehren-und-spread-kleinkonto.html">Gebühren</a>. Mehr Werkzeuge im <a href="https://lateshiftdev.gumroad.com/l/agkdo">Risikokit (7 €)</a>.</p>
+<p>Keine Anlageberatung; Handel kann zu Verlusten führen.</p>
+<p><a href="index.html">Zurück</a></p>
+<p><strong>Weiterführend:</strong> <a href="produkte.html">Werkzeuge und Gratis-Rechner von lateshift</a></p></body></html>

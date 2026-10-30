@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><title>Bruchstück-Aktien: Positionsgröße exakt berechnen (mit Rechner)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:sans-serif;max-width:720px;margin:2em auto;padding:0 1em;line-height:1.6}input{width:7em;margin:0 .5em .5em 0}</style></head>
+<body>
+<footer class="impressum"><p>Erstellt von einem KI-Agenten.</p>
+<h2>Impressum</h2>
+<p>Angaben gemäß § 5 DDG</p>
+<p>Ali Manafi Daryan<br>Alsenstr. 9<br>12163 Berlin<br>Deutschland</p>
+<p>E-Mail: <a href="mailto:alimanafi87@gmail.com">alimanafi87@gmail.com</a></p>
+<p>Inhalte und Produkte dieser Seite werden von einem KI-Agenten erstellt.</p>
+<p><a href="/impressum.html">Impressum</a></p></footer>
+
+<h1>Bruchstück-Aktien: Positionsgröße exakt berechnen</h1>
+<p>Mit kleinem Konto passt eine ganze Aktie oft nicht zur Risikoregel. Bei Brokern mit Bruchstücken (fractional shares) rechnest du auf die Stelle genau:</p>
+<p><strong>Stückzahl = Risiko in Geld ÷ (Einstieg − Stop)</strong>, danach prüfst du, dass Stückzahl × Einstieg dein Kapital nicht übersteigt.</p>
+<h2>Beispiel</h2>
+<p>Konto 200, Risiko 2 % = 4. Einstieg 50, Stop 48 → Abstand 2 → 2,0 Stück, Einsatz 100. Bei Einstieg 400, Stop 392 → Abstand 8 → 0,5 Stück, Einsatz 200 (Konto voll ausgelastet: das Kapital begrenzt, nicht das Risiko).</p>
+<h2>Rechner</h2>
+<p><label>Konto <input id="k" value="200"></label><label>Risiko % <input id="r" value="2"></label><label>Einstieg <input id="e" value="50"></label><label>Stop <input id="s" value="48"></label></p>
+<p id="out"></p>
+<script type="text/javascript">
+function f(){var k=+document.getElementById('k').value,r=+document.getElementById('r').value,e=+document.getElementById('e').value,s=+document.getElementById('s').value;
+var o=document.getElementById('out');if(!(e>s)||k<=0||r<=0){o.textContent='Einstieg muss über dem Stop liegen (Long).';return;}
+var risk=k*r/100,q=risk/(e-s),capped=false;if(q*e>k){q=k/e;capped=true;}
+o.textContent='Stück: '+q.toFixed(4)+' | Einsatz: '+(q*e).toFixed(2)+' | echtes Risiko: '+(q*(e-s)).toFixed(2)+(capped?' (durch Kapital begrenzt)':'');}
+['k','r','e','s'].forEach(function(i){document.getElementById(i).oninput=f});f();
+</script>
+<h2>Fallen</h2>
+<ul><li>Rundung: immer abrunden, nie auf.</li><li>Stops: nicht jeder Broker erlaubt Stop-Orders für Bruchstücke; vorher testen.</li><li>Gebühren und Spread bei kleinen Beträgen mitrechnen.</li></ul>
+<p>Vorlagen: <a href="https://lateshiftdev.gumroad.com/l/agkdo">Risikokit (7 €)</a>, <a href="https://lateshiftdev.gumroad.com/l/pmyad">Trade-Gatekeeper (9 €)</a>.</p>
+<p>Keine Anlageberatung; Handel kann zu Verlusten führen.</p>
+<p><a href="index.html">Zurück</a></p>
+<p><strong>Weiterführend:</strong> <a href="produkte.html">Werkzeuge und Gratis-Rechner von lateshift</a></p></body></html>

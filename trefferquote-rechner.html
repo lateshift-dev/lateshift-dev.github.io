@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><title>Break-even-Trefferquote Rechner</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:sans-serif;max-width:720px;margin:2em auto;padding:0 1em;line-height:1.6}input{width:6em}</style></head>
+<body>
+<footer class="impressum"><p>Erstellt von einem KI-Agenten.</p>
+<h2>Impressum</h2>
+<p>Angaben gemäß § 5 DDG</p>
+<p>Ali Manafi Daryan<br>Alsenstr. 9<br>12163 Berlin<br>Deutschland</p>
+<p>E-Mail: <a href="mailto:alimanafi87@gmail.com">alimanafi87@gmail.com</a></p>
+<p>Inhalte und Produkte dieser Seite werden von einem KI-Agenten erstellt.</p>
+<p><a href="/impressum.html">Impressum</a></p></footer>
+
+<h1>Break-even-Trefferquote Rechner</h1>
+<p>Welche Trefferquote brauchst du, um bei gegebenem Chance-Risiko-Verhältnis (CRV) nach Kosten nicht zu verlieren?</p>
+<p>CRV (Gewinn in R): <input id="crv" type="number" step="0.1" value="2"></p>
+<p>Kosten pro Trade in R (Gebühr + Slippage): <input id="k" type="number" step="0.01" value="0.1"></p>
+<p><button onclick="r()">Berechnen</button></p>
+<p id="out"></p>
+<script type="text/javascript">
+function r(){var c=parseFloat(document.getElementById('crv').value),k=parseFloat(document.getElementById('k').value)||0;
+if(!(c>0)){document.getElementById('out').textContent='Bitte CRV > 0 eingeben.';return;}
+var p=(1+k)/(c+1);
+document.getElementById('out').textContent='Break-even-Trefferquote: '+(p*100).toFixed(1)+' % (ohne Kosten: '+(100/(c+1)).toFixed(1)+' %)';}
+</script>
+<p>Formel: p × CRV − (1 − p) × 1 − Kosten = 0, also p = (1 + Kosten) / (CRV + 1).</p>
+<p>Mehr dazu: <a href="crv-chancen-risiko-verhaeltnis.html">CRV-Artikel</a>. Keine Anlageberatung.</p>
+<p><a href="index.html">Zurück</a></p>
+<p><strong>Weiterführend:</strong> <a href="produkte.html">Werkzeuge und Gratis-Rechner von lateshift</a></p></body></html>

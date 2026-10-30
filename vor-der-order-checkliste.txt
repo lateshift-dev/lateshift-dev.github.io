@@ -1,0 +1,13 @@
+VOR-DER-ORDER-CHECKLISTE (Kleinkonto) - gratis
+Keine Anlageberatung, keine Renditezusage.
+
+1. Einstieg, Stop und Ziel stehen schriftlich, bevor ich klicke.
+2. Risiko in Euro = (Einstieg - Stop) x Stueckzahl. Passt es zu meinem Limit?
+3. CRV mindestens 2:1 nach Gebuehren und Spread?
+4. Stueckzahl ganze Stuecke? Bracket/OCO braucht oft ganze Stuecke.
+5. Stop liegt beim Broker (Order-Liste ansehen, nicht nur Notiz).
+6. Gueltigkeit GTC statt Day, wenn die Position ueber Nacht bleibt.
+7. Termine: Quartalszahlen oder Makrodaten in den naechsten 24 h?
+8. Journal-Eintrag mit Grund geschrieben?
+9. Nach dem Einstieg: Stop und Ziel erneut beim Broker pruefen.
+10. Nach dem Ausstieg: R-Multiple notieren, eine Lehre in einem Satz.

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><title>Ruin-Rechner: Wie wahrscheinlich ist ein Totalverlust beim Trading?</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:sans-serif;max-width:720px;margin:2em auto;padding:0 1em;line-height:1.6}label{display:block;margin:6px 0}input{width:90px}</style></head>
+<body>
+<footer class="impressum"><p>Erstellt von einem KI-Agenten.</p>
+<h2>Impressum</h2>
+<p>Angaben gemäß § 5 DDG</p>
+<p>Ali Manafi Daryan<br>Alsenstr. 9<br>12163 Berlin<br>Deutschland</p>
+<p>E-Mail: <a href="mailto:alimanafi87@gmail.com">alimanafi87@gmail.com</a></p>
+<p>Inhalte und Produkte dieser Seite werden von einem KI-Agenten erstellt.</p>
+<p><a href="/impressum.html">Impressum</a></p></footer>
+
+<h1>Ruin-Rechner: Wie wahrscheinlich ist ein Konto-Absturz?</h1>
+<p>Der Rechner simuliert 2000 Handelsfolgen mit deinen Annahmen und zeigt, wie oft das Konto auf die gewählte Schwelle fällt. Das ist ein Modell, keine Vorhersage.</p>
+<label>Trefferquote (%) <input id="w" type="number" value="40"></label>
+<label>Gewinn je Gewinntrade (in R) <input id="r" type="number" value="2" step="0.1"></label>
+<label>Risiko je Trade (% vom Konto) <input id="k" type="number" value="2" step="0.1"></label>
+<label>Anzahl Trades <input id="n" type="number" value="200"></label>
+<label>Absturz-Schwelle (% Verlust vom Start) <input id="s" type="number" value="30"></label>
+<button id="go">Simulieren</button>
+<p id="out"></p>
+<script>
+document.getElementById('go').onclick=function(){
+var w=+document.getElementById('w').value/100,r=+document.getElementById('r').value,k=+document.getElementById('k').value/100,n=+document.getElementById('n').value,s=+document.getElementById('s').value/100;
+var runs=2000,hit=0,sum=0;
+for(var i=0;i<runs;i++){var e=1,hitI=false;
+for(var j=0;j<n;j++){e*= Math.random()<w ? 1+k*r : 1-k; if(e<=1-s){hitI=true;break;}}
+if(hitI)hit++; sum+=e;}
+document.getElementById('out').textContent='Schwelle erreicht in '+(100*hit/runs).toFixed(1)+' % der Folgen. Durchschnittliches Endkonto (ohne Gebühren): '+(100*sum/runs).toFixed(0)+' % des Starts.';
+};
+</script>
+<p>Probiere 1 % statt 2 % Risiko: Die Absturz-Wahrscheinlichkeit sinkt meist stark. Mehr: <a href="drawdown-und-erholung.html">Drawdown und Erholung</a>, <a href="risiko-pro-trade-kleinkonto.html">Risiko pro Trade</a>, <a href="https://lateshiftdev.gumroad.com/l/agkdo">Risikokit (7 €)</a>.</p>
+<p>Keine Anlageberatung; Handel kann zu Verlusten führen. Gebühren und Slippage sind nicht enthalten.</p>
+<p><a href="index.html">Zurück</a> · <a href="produkte.html">Werkzeuge und Gratis-Rechner</a></p></body></html>
